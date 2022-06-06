@@ -33,8 +33,8 @@ const authController = {
     profile: async function(req, res){
         try {
             const user = new User(req.body)
-            // let token = await authService.register(user)
-            // res.status(200).json({"token": token})
+            let token = await authService.register(user)
+            res.status(200).json({"token": token})
             res.send("bien")
         } catch (error) {
             res.send(error)
